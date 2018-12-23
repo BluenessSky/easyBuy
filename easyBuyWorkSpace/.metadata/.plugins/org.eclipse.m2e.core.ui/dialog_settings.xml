@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardArchetypePage">
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="issueManagementUrl">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="F:\easyBuyWorkSpace\easybuy-search-web"/>
+			<item value="F:\easyBuyWorkSpace\easybuy-pay-web"/>
+			<item value="F:\easyBuyWorkSpace\easybuy-manager-web"/>
+			<item value="F:\easyBuyWorkSpace\easybuy-order-web"/>
+			<item value="F:\easyBuyWorkSpace\message-dayu\src\main\java"/>
+			<item value="F:\easyBuyWorkSpace\easybuy-sso\easybuy-sso-service"/>
+			<item value="F:\easyBuyWorkSpace\easybuy_manager"/>
+			<item value="F:\easyBuyWorkSpace\easybuy_manager\easybuy-manager-pojo"/>
+			<item value="F:\easyBuyWorkSpace\easybuy-parent"/>
+			<item value="F:\easyBuyWorkSpace\easybuy_parent"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="groupId">
+			<item value="com.bdqn"/>
+		</list>
+		<list key="package">
+			<item value="org.easybuy.seckill.service"/>
+		</list>
+		<list key="artifactId">
+			<item value="easybuy-seckill-service"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenModuleWizardParentPage">
+		<list key="moduleName">
+			<item value="easybuy-seckill-service"/>
+			<item value="easybuy-seckill-interface"/>
+			<item value="easybuy-seckill-dao"/>
+			<item value="easybuy-seckill-pojo"/>
+			<item value="easybuy-order-service"/>
+			<item value="easybuy-order-interface"/>
+			<item value="easybuy-interface"/>
+			<item value="easybuy-search-dao"/>
+			<item value="easybuy-search-service"/>
+			<item value="easybuy-search-interface"/>
+			<item value="easybuy-manager-service"/>
+			<item value="easybuy-manager-interface"/>
+			<item value="easybuy-manager-dao"/>
+			<item value="easybuy-manager-pojo"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="E:\课堂作业\U4\第三天\资料\fastdfs_client"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="com.bdqn"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="easybuy-seckill-service"/>
+			<item value="easybuy-seckill"/>
+			<item value="easybuy-seckill-interface"/>
+			<item value="easybuy-seckill-dao"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+</section>

@@ -1,0 +1,19 @@
+INDEX VERSION 1.3+F:\easyBuyWorkSpace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3105627973.index
+811859927.index
+1633974416.index
+3123493194.index
+2049733723.index
+316749052.index
+3627303121.index
+3059814625.index
+900789417.index
+2656595323.index
+3549295048.index
+403641607.index
+2304653401.index
+1959072191.index
+2734819502.index
+814855956.index
+2287586856.index
+1670470083.index

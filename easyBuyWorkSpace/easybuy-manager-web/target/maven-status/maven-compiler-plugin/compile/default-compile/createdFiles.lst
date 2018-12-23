@@ -1,0 +1,6 @@
+org\java\contorller\ProductController.class
+org\java\contorller\ContentController.class
+org\java\contorller\PageController.class
+org\java\contorller\PictureController.class
+org\java\contorller\ProductCategoryController.class
+org\java\contorller\SolrController.class

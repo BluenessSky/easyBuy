@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.java.search.mapper.SearchMapper" >
+ 	<select id="selectProduct" resultType="org.java.common.pojo.SearchProduct">
+ 	SELECT 
+ 	p1.*,
+ 	c2.name categoryNameOne,
+ 	c3.name categoryNameTwo,
+ 	c1.name categoryNameThree
+ FROM 
+ easybuy_product p1,
+ easybuy_product_category c1,
+ easybuy_product_category c2,
+ easybuy_product_category c3
+WHERE p1.categoryLevel1Id=c1.id 
+AND p1.categoryLevel2Id=c2.id 
+AND p1.categoryLevel3Id=c3.id
+ 	</select>
+ 	<select id="selectProductbyId" parameterType="java.lang.Integer" resultType="org.java.common.pojo.SearchProduct">
+ 	SELECT 
+ 	p1.*,
+ 	c2.name categoryNameOne,
+ 	c3.name categoryNameTwo,
+ 	c1.name categoryNameThree
+ FROM 
+ 	easybuy_product p1,
+ 	easybuy_product_category c1,
+ 	easybuy_product_category c2,
+ 	easybuy_product_category c3
+	WHERE p1.categoryLevel1Id=c1.id 
+	AND p1.categoryLevel2Id=c2.id 
+	AND p1.categoryLevel3Id=c3.id
+	AND p1.id=#{id}
+ 	</select>
+</mapper>

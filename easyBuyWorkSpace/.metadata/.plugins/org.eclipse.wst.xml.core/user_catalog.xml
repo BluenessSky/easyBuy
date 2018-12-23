@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <uri name="http://code.alibabatech.com/schema/dubbo/dubbo.xsd" uri="file:///E:/课堂作业/U4/第二天/资料/dubbo.xsd"/>
+  <public publicId="-//mybatis.org//DTD Mapper 3.0//EN" uri="file:///E:/相关/mybatis-3-mapper.dtd"/>
+</catalog>

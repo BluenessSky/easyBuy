@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.java.mapper.SeckillMapper" >
+  <resultMap id="BaseResultMap" type="org.java.pojo.Seckill" >
+    <id column="seckill_id" property="seckillId" jdbcType="BIGINT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="sell_point" property="sellPoint" jdbcType="VARCHAR" />
+    <result column="number" property="number" jdbcType="INTEGER" />
+    <result column="old_pirce" property="oldPirce" jdbcType="BIGINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="new_price" property="newPrice" jdbcType="BIGINT" />
+    <result column="barcode" property="barcode" jdbcType="VARCHAR" />
+    <result column="image" property="image" jdbcType="VARCHAR" />
+    <result column="cid" property="cid" jdbcType="BIGINT" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
+    <result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    seckill_id, name, sell_point, number, old_pirce, create_time, new_price, barcode, 
+    image, cid, status, start_time, end_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="org.java.pojo.SeckillExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from seckill
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from seckill
+    where seckill_id = #{seckillId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from seckill
+    where seckill_id = #{seckillId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="org.java.pojo.SeckillExample" >
+    delete from seckill
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="org.java.pojo.Seckill" >
+    insert into seckill (seckill_id, name, sell_point, 
+      number, old_pirce, create_time, 
+      new_price, barcode, image, 
+      cid, status, start_time, 
+      end_time)
+    values (#{seckillId,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{sellPoint,jdbcType=VARCHAR}, 
+      #{number,jdbcType=INTEGER}, #{oldPirce,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{newPrice,jdbcType=BIGINT}, #{barcode,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, 
+      #{cid,jdbcType=BIGINT}, #{status,jdbcType=TINYINT}, #{startTime,jdbcType=TIMESTAMP}, 
+      #{endTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="org.java.pojo.Seckill" >
+    insert into seckill
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="seckillId != null" >
+        seckill_id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="sellPoint != null" >
+        sell_point,
+      </if>
+      <if test="number != null" >
+        number,
+      </if>
+      <if test="oldPirce != null" >
+        old_pirce,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="newPrice != null" >
+        new_price,
+      </if>
+      <if test="barcode != null" >
+        barcode,
+      </if>
+      <if test="image != null" >
+        image,
+      </if>
+      <if test="cid != null" >
+        cid,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="startTime != null" >
+        start_time,
+      </if>
+      <if test="endTime != null" >
+        end_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="seckillId != null" >
+        #{seckillId,jdbcType=BIGINT},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sellPoint != null" >
+        #{sellPoint,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        #{number,jdbcType=INTEGER},
+      </if>
+      <if test="oldPirce != null" >
+        #{oldPirce,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="newPrice != null" >
+        #{newPrice,jdbcType=BIGINT},
+      </if>
+      <if test="barcode != null" >
+        #{barcode,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null" >
+        #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="cid != null" >
+        #{cid,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="startTime != null" >
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="org.java.pojo.SeckillExample" resultType="java.lang.Integer" >
+    select count(*) from seckill
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update seckill
+    <set >
+      <if test="record.seckillId != null" >
+        seckill_id = #{record.seckillId,jdbcType=BIGINT},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sellPoint != null" >
+        sell_point = #{record.sellPoint,jdbcType=VARCHAR},
+      </if>
+      <if test="record.number != null" >
+        number = #{record.number,jdbcType=INTEGER},
+      </if>
+      <if test="record.oldPirce != null" >
+        old_pirce = #{record.oldPirce,jdbcType=BIGINT},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.newPrice != null" >
+        new_price = #{record.newPrice,jdbcType=BIGINT},
+      </if>
+      <if test="record.barcode != null" >
+        barcode = #{record.barcode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.image != null" >
+        image = #{record.image,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cid != null" >
+        cid = #{record.cid,jdbcType=BIGINT},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=TINYINT},
+      </if>
+      <if test="record.startTime != null" >
+        start_time = #{record.startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.endTime != null" >
+        end_time = #{record.endTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update seckill
+    set seckill_id = #{record.seckillId,jdbcType=BIGINT},
+      name = #{record.name,jdbcType=VARCHAR},
+      sell_point = #{record.sellPoint,jdbcType=VARCHAR},
+      number = #{record.number,jdbcType=INTEGER},
+      old_pirce = #{record.oldPirce,jdbcType=BIGINT},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      new_price = #{record.newPrice,jdbcType=BIGINT},
+      barcode = #{record.barcode,jdbcType=VARCHAR},
+      image = #{record.image,jdbcType=VARCHAR},
+      cid = #{record.cid,jdbcType=BIGINT},
+      status = #{record.status,jdbcType=TINYINT},
+      start_time = #{record.startTime,jdbcType=TIMESTAMP},
+      end_time = #{record.endTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="org.java.pojo.Seckill" >
+    update seckill
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sellPoint != null" >
+        sell_point = #{sellPoint,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        number = #{number,jdbcType=INTEGER},
+      </if>
+      <if test="oldPirce != null" >
+        old_pirce = #{oldPirce,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="newPrice != null" >
+        new_price = #{newPrice,jdbcType=BIGINT},
+      </if>
+      <if test="barcode != null" >
+        barcode = #{barcode,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null" >
+        image = #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="cid != null" >
+        cid = #{cid,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="startTime != null" >
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where seckill_id = #{seckillId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="org.java.pojo.Seckill" >
+    update seckill
+    set name = #{name,jdbcType=VARCHAR},
+      sell_point = #{sellPoint,jdbcType=VARCHAR},
+      number = #{number,jdbcType=INTEGER},
+      old_pirce = #{oldPirce,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      new_price = #{newPrice,jdbcType=BIGINT},
+      barcode = #{barcode,jdbcType=VARCHAR},
+      image = #{image,jdbcType=VARCHAR},
+      cid = #{cid,jdbcType=BIGINT},
+      status = #{status,jdbcType=TINYINT},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP}
+    where seckill_id = #{seckillId,jdbcType=BIGINT}
+  </update>
+   <!-- 减少库存 -->
+  <update id="reduceCount" parameterType="map">
+  	 UPDATE `seckill` SET number=number-1 WHERE `seckill_id` = #{seckillId} AND number > 0 AND `start_time` &lt; #{now} AND `end_time` > #{now} 
+  	 <!--UPDATE `seckill` SET number=number-1 WHERE `seckill_id` = #{seckillId} AND number > 0 AND `start_time` <![CDATA[<]]> #{now} AND `end_time` > #{now}-->
+  </update>
+  
+  <select id="getByIdForUpdate" parameterType="java.lang.Long" resultType="org.java.pojo.Seckill">
+  	SELECT `seckill_id` seckillId,`name` name,`sell_point` sellPoint,`number` number,`old_pirce` oldPirce,`create_time` createTime,`new_price` newPrice,`barcode` barcode,`image` image,`cid` cid,`status` status,`start_time` startTime,`end_time` endTime FROM seckill WHERE `seckill_id`=#{seckillId} FOR UPDATE
+  </select>
+ 
+</mapper>

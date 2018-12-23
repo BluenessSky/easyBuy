@@ -1,0 +1,3 @@
+org\java\search\service\impl\SearchServiceImpl.class
+org\java\search\listener\DeleteProductLintener.class
+org\java\search\listener\AddProductLintener.class

@@ -1,0 +1,40 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-3.2.xsd 
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-3.2.xsd 
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx-3.2.xsd ">
+		<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+			<!-- 邮件发送器 (qq:smtp.qq.com 126:smtp.126.com)-->
+			<property name="host" value="smtp.qq.com"></property>
+			<!-- 用来作为邮件发送服务器的账号 -->
+			<property name="username" value="515844706"></property>
+			<property name="password" value="bgodululovrrbgjb"></property>
+			<!-- 邮件发送的协议 -->
+			<property name="protocol" value="smtp"></property>
+			<property name="javaMailProperties" >
+				<map>
+					<!-- 是否认证 -->
+					<entry key="mail.smtp.auth" value="value"></entry>
+					<!-- 启用SSL 外发邮件 -->
+					<entry key="mail.smtp.ssl.enable" value="true"></entry>
+					<entry key="mail.smtp.ssl.socketFactory">
+						<bean class="com.sun.mail.util.MailSSLSocketFactory">
+							<property name="trustAllHosts" value="true"></property>
+						</bean>
+					</entry>
+				</map>
+			</property>
+		</bean>
+		<bean id="mailTest" class="org.java.test.SendMialTest">
+		<property name="mailSender" ref="mailSender"></property>
+	</bean>
+</beans>

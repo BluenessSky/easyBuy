@@ -1,0 +1,4 @@
+org\java\jedis\JedisClient.class
+org\java\jedis\JedisClientCluster.class
+org\java\sso\service\impl\UserServiceImpl.class
+org\java\jedis\JedisClientPool.class

@@ -1,0 +1,12 @@
+<html>
+	<head>
+		<title>freemark</title>
+	</head>	
+	<body>
+		<h1>展示学生信息--freemark和pojo整合</h1>
+		<p>学号：${stu.id}</p>
+		<p>姓名：${stu.name}</p>
+		<p>年龄：${stu.age}</p>
+		<p>地址：${stu.address}</p>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+package org.java.service.impl;
+
+import java.util.List;
+
+import org.java.mapper.EasybuyProductMapper;
+import org.java.pojo.EasybuyProduct;
+import org.java.pojo.EasybuyProductExample;
+import org.java.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.alibaba.dubbo.container.page.PageHandler;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+@Service
+public class ProductServiceImpl implements ProductService{
+	@Autowired
+	private EasybuyProductMapper easybuyProductMapper;
+	@Override
+	public EasybuyProduct getById(Integer id) {
+		return easybuyProductMapper.selectByPrimaryKey(id);
+	}
+	@Override
+	public PageInfo<EasybuyProduct> getProducts(Integer currentPage, Integer pageSize) {
+		if(currentPage==null){
+			currentPage=1;
+		}
+		if(pageSize==null){
+			pageSize=10;
+		}
+		PageHelper.startPage(currentPage, pageSize);
+		EasybuyProductExample example=new EasybuyProductExample();
+		example.setOrderByClause("id desc");
+		List<EasybuyProduct> list = easybuyProductMapper.selectByExample(example);
+		PageInfo<EasybuyProduct> pageInfo=new PageInfo<>(list);
+		return pageInfo;
+	}
+
+}

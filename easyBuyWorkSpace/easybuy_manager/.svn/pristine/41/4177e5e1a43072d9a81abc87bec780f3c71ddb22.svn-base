@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.bdqn</groupId>
+    <artifactId>easybuy-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.bdqn</groupId>
+  <artifactId>easybuy_manager</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+  	<module>easybuy-manager-pojo</module>
+  	<module>easybuy-manager-dao</module>
+  	<module>easybuy-manager-interface</module>
+  	<module>easybuy-manager-service</module>
+  </modules>
+</project>

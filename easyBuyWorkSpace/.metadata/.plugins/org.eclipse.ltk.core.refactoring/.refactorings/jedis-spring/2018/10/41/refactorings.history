@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;org.java.jedis.spring.test&apos; to &apos;org.java.jedis.test&apos;&#x0D;&#x0A;- Original project: &apos;jedis-spring&apos;&#x0D;&#x0A;- Original element: &apos;jedis-spring/src/main/java/org.java.jedis.spring.test&apos;&#x0D;&#x0A;- Renamed element: &apos;jedis-spring/src/main/java/org.java.jedis.test&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;org.java.jedis.spring.test&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;org.java.jedis.spring.test" name="org.java.jedis.test" qualified="false" references="true" stamp="1539156253897" textual="false" version="1.0"/>
+</session>

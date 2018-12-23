@@ -1,0 +1,15 @@
+package org.java.service.impl;
+
+import org.java.pojo.EasybuyProduct;
+import org.java.service.ProductService;
+import org.springframework.stereotype.Service;
+@Service
+public class ProductServiceImpl implements ProductService{
+
+	@Override
+	public EasybuyProduct getById(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

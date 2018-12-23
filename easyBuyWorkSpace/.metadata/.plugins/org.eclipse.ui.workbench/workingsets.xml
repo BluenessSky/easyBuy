@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1538486611997_1" label="easybuy_manager" name="easybuy_manager">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/easybuy-manager-pojo" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/easybuy-manager-service" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/easybuy-manager-dao" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/easybuy-manager-interface" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1538224577881_0" label="Window Working Set" name="Aggregate for window 1538224577881"/>
+</workingSetManager>

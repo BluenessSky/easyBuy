@@ -1,0 +1,43 @@
+package org.java.contorller;
+
+import org.java.common.pojo.Page;
+import org.java.pojo.EasybuyProduct;
+import org.java.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.github.pagehelper.PageInfo;
+
+@Controller
+public class ProductController {
+	@Autowired
+	private ProductService productService;
+	/**
+	 * 测试：根据商品编号获取到商品对象
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping("/show/{id}")
+	@ResponseBody
+	public EasybuyProduct show(@PathVariable("id") Integer id){
+		return productService.getById(id);
+	}
+	/**
+	 * 展示商品信息
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping("/product/list")
+	@ResponseBody
+	public ModelAndView list(ModelAndView mv,Integer currentPage,Integer pageSize){
+		PageInfo<EasybuyProduct> pageInfo = productService.getProducts(currentPage, pageSize);
+		mv.addObject("productList",pageInfo.getList());
+		Page page=new Page(pageInfo.getPages(),"/product/list?1=1", currentPage, count)
+		mv.addObject("page",null);
+		return mv;
+	}
+}
